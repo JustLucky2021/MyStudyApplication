@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:layout_marginTop="128dp">
+
+        <TextView
+            android:id="@+id/tvAuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Авторизация"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="Authorization" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="317dp"
+            android:layout_height="95dp"
+            android:textSize="14sp"
+            android:text="Укажите свой телефонный номер,\n чтобы сделать заказ"
+            android:layout_marginTop="16dp" />
+
+
+        <com.github.pinball83.maskededittext.MaskedEditText
+            android:id="@+id/etPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginTop="-38dp"
+            android:fontFamily="@font/roboto"
+            app:mask="+7 (***) ***-**-**"
+            app:notMaskedSymbol="*"
+            app:format="[1][2][3] [4][5][6]-[7][8]-[9][10]"
+            android:hint="+8 800 2222 600"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="12dp"
+            android:inputType="phone"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="23dp"
+        android:gravity="bottom|center_horizontal">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStart"
+            android:layout_width="220dp"
+            android:layout_height="48dp"
+            android:background="@color/button_background_color"
+            android:fontFamily="@font/roboto"
+            android:text="НАЧАТЬ"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Пропустить"
+            android:textSize="12sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/red"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/confirm_agreement"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+</LinearLayout>

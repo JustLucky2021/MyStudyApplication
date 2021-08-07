@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/clRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMarginLeft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMarginRight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <ImageView
+            android:id="@+id/ivLogoFirstString"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_online"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ivLogoSecondString"/>
+
+        <ImageView
+            android:id="@+id/ivLogoSecondString"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_swiftbook"
+            app:layout_constraintStart_toStartOf="@id/ivLogoFirstString"
+            app:layout_constraintTop_toBottomOf="@id/ivLogoFirstString" />
+
+        <ImageView
+            android:id="@+id/ivCircle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogoFirstString"
+            app:layout_constraintStart_toEndOf="@id/ivLogoSecondString"
+            app:layout_constraintTop_toTopOf="@id/ivLogoFirstString" />
+
+        <ImageView
+            android:id="@+id/ivCloseRoot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_close_root"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogoSecondString"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivLogoFirstString" />
+
+        <TextView
+            android:id="@+id/tvRecycle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/roboto"
+            android:text="Корзина"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@id/ivLogoFirstString"
+            app:layout_constraintTop_toBottomOf="@id/ivLogoSecondString" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFirstFrameOfOrder1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shadow"
+            app:layout_constraintEnd_toEndOf="@id/clRoot"
+            app:layout_constraintStart_toStartOf="@id/clRoot"
+            app:layout_constraintTop_toBottomOf="@id/tvRecycle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSecondFrameOfOrder1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/border_of_order"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/ivFoodFoto1"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/drawable_tom_yam"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFoodText1"
+                    android:layout_width="212dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto"
+                    android:maxLines="1"
+                    android:text="Том Ям суп с морепродуктами"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvFoodCount1"
+                    app:layout_constraintStart_toEndOf="@+id/ivFoodFoto1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    tools:text="Том Ям суп с морепродуктами" />
+
+                <TextView
+                    android:id="@+id/tvFoodCount1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="Кол-во: 2 шт."
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvFoodText1"
+                    app:layout_constraintTop_toBottomOf="@id/tvFoodText1"
+                    tools:text="Кол-во: 2 шт." />
+
+                <TextView
+                    android:id="@+id/tvFoodPrice1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/food_price_background"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="470 ₽"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvFoodCount1"
+                    app:layout_constraintEnd_toEndOf="@id/tvFoodText1"
+                    tools:text="470 ₽" />
+
+                <ImageView
+                    android:id="@+id/ivDeleteItemOfOrder1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close_root"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFoodPrice1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#A1A1A1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFirstFrameOfOrder2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shadow"
+            app:layout_constraintEnd_toEndOf="@id/clRoot"
+            app:layout_constraintStart_toStartOf="@id/clRoot"
+            app:layout_constraintTop_toBottomOf="@id/clFirstFrameOfOrder1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSecondFrameOfOrder2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/border_of_order"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/ivFoodFoto2"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/draw_filadelfia"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFoodText2"
+                    android:layout_width="212dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto"
+                    android:maxLines="1"
+                    android:text="Сет запеченая Филадельфия Party De Luxe"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvFoodCount2"
+                    app:layout_constraintStart_toEndOf="@+id/ivFoodFoto2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    tools:text="Сет запеченая Филадельфия Party De Luxe" />
+
+                <TextView
+                    android:id="@+id/tvFoodCount2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="Кол-во: 1 шт."
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvFoodText2"
+                    app:layout_constraintTop_toBottomOf="@id/tvFoodText2"
+                    tools:text="Кол-во: 1 шт." />
+
+                <TextView
+                    android:id="@+id/tvFoodPrice2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/food_price_background"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="115 ₽"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvFoodCount2"
+                    app:layout_constraintEnd_toEndOf="@id/tvFoodText2"
+                    tools:text="115 ₽" />
+
+                <ImageView
+                    android:id="@+id/ivDeleteItemOfOrder2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close_root"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFoodText2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#A1A1A1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFirstFrameOfOrder3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shadow"
+            app:layout_constraintEnd_toEndOf="@id/clRoot"
+            app:layout_constraintStart_toStartOf="@id/clRoot"
+            app:layout_constraintTop_toBottomOf="@id/clFirstFrameOfOrder2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSecondFrameOfOrder3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/border_of_order"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/ivFoodFoto3"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/draw_desert"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFoodText3"
+                    android:layout_width="212dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto"
+                    android:maxLines="1"
+                    android:text="Десерт круассан с грецкими орехами"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvFoodCount3"
+                    app:layout_constraintStart_toEndOf="@+id/ivFoodFoto3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    tools:text="Десерт круассан с грецкими орехами" />
+
+                <TextView
+                    android:id="@+id/tvFoodCount3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="Кол-во: 1 шт."
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvFoodText3"
+                    app:layout_constraintTop_toBottomOf="@id/tvFoodText3"
+                    tools:text="Кол-во: 1 шт." />
+
+                <TextView
+                    android:id="@+id/tvFoodPrice3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/food_price_background"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="115 ₽"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvFoodCount3"
+                    app:layout_constraintEnd_toEndOf="@id/tvFoodText3"
+                    tools:text="115 ₽" />
+
+                <ImageView
+                    android:id="@+id/ivDeleteItemOfOrder3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close_root"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFoodPrice3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#A1A1A1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvCommentTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/roboto"
+            android:text="Комментарий"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintTop_toBottomOf="@id/clFirstFrameOfOrder3" />
+
+        <EditText
+            android:id="@+id/tvComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/comment_shadow"
+            android:gravity="top"
+            android:paddingRight="6dp"
+            android:paddingLeft="6dp"
+            android:paddingTop="6dp"
+            android:hint="Укажите дополнительную информацию\n к заказу"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintTop_toBottomOf="@id/tvCommentTitle" />
+
+        <TextView
+            android:id="@+id/tvBlackLine"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintTop_toBottomOf="@id/tvComment" />
+
+        <TextView
+            android:id="@+id/tvAdditionalTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:text="Дополнително"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintTop_toBottomOf="@id/tvBlackLine" />
+
+
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swPickup"
+            android:checked="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Самовывоз"
+            app:layout_constraintTop_toBottomOf="@id/tvAdditionalTitle"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"/>
+
+
+        <RadioGroup
+            android:id="@+id/rgPayType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintTop_toBottomOf="@id/swPickup"
+            app:layout_constraintBottom_toTopOf="@id/btn_Make_Order">
+
+            <RadioButton
+                android:id="@+id/rb_Card_Pay"
+                android:layoutDirection="rtl"
+                android:text="Оплата картой"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rb_Cash_Pay"
+                android:layoutDirection="rtl"
+                android:text="Оплата наличными"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Make_Order"
+            android:layout_width="220dp"
+            android:layout_height="48dp"
+            android:background="@color/button_background_color"
+            android:fontFamily="@font/roboto"
+            android:text="ЗАКАЗАТЬ"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rgPayType"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="23dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
